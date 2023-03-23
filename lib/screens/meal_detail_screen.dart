@@ -4,7 +4,7 @@ import 'package:meals/models/meal.dart';
 class MealDetailScreen extends StatelessWidget {
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         title,
         style: Theme.of(context).textTheme.titleMedium,
@@ -93,6 +93,12 @@ class MealDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.star),
+        onPressed: () {
+          Navigator.of(context).pop(meal.title);
+        },
       ),
     );
   }
